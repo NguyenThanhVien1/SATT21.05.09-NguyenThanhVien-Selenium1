@@ -33,8 +33,12 @@ public class LoginTest {
 
         LoginPage loginPage = homePage.gotoLoginPage();
         String actualMsg = loginPage.login(Constant.USERNAME, Constant.PASSWORD).getWelcomeMessage();
-        String expectedMsg = "welcome" + Constant.USERNAME;
+        String expectedMsg = "Welcome " + Constant.USERNAME;
 
         Assert.assertEquals(actualMsg, expectedMsg,"Welcome message is not displayed as expected");
+    }
+    public void TC02(){
+        
+
     }
 }

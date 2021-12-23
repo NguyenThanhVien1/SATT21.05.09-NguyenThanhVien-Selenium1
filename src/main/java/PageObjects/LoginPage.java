@@ -37,4 +37,6 @@ public class LoginPage extends GeneralPage {
             this.getBntLogin().click();
             return new HomePage();
         }
+
+
 }
