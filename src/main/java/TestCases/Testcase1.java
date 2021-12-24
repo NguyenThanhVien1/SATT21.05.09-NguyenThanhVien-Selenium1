@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest {
+public class Testcase1 {
     @BeforeMethod
     public void beforeMethod(){
             System.out.println("Pre-condition");
@@ -37,8 +37,5 @@ public class LoginTest {
 
         Assert.assertEquals(actualMsg, expectedMsg,"Welcome message is not displayed as expected");
     }
-    public void TC02(){
-        
 
-    }
 }
