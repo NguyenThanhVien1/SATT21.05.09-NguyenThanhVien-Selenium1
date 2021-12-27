@@ -6,10 +6,11 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage extends GeneralPage {
         //Locators
-        private final By Username = By.xpath("//input[@id='username']");
-        private final By Password = By.xpath("//input[@id='password']");
+        private final By Username = By.id("username");
+        private final By Password = By.id("password");
         private final By Login = By.xpath("//input[@value='login']");
         private final By LoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
+        private final By LbLogin = By.xpath("//h1[@align='center']");
 
         //Elements
         public WebElement getTxtUsername()
@@ -28,20 +29,29 @@ public class LoginPage extends GeneralPage {
         {
             return Constant.WEBDRIVER.findElement(LoginErrorMsg);
         }
+        protected WebElement getLbLogin(){return Constant.WEBDRIVER.findElement(LbLogin);}
 
         //Method
-        public HomePage login(String username, String password){
+        public void login (String username, String password){
             //Submit login credentials
             this.getTxtUsername().sendKeys(username);
             this.getTxtPassword().sendKeys(password);
             this.getBntLogin().click();
-            return new HomePage();
+
         }
-        public HomePage InvalidPassword(String username, String password){
+        public void InvalidPassword(String username, String password){
             this.getTxtUsername().sendKeys("thanhle@logigear.com");
             this.getTxtPassword().sendKeys("123456");
             this.getBntLogin().click();
-            return new HomePage();
+
+        }
+    public void MultiBookticket(){
+        int i;
+        for (i=1; i<=4;i++) {
+            login(Constant.USERNAME,"");
         }
 
+    }
+
+    public String getLbLoginPage(){return this.getLbLogin().getText();}
 }

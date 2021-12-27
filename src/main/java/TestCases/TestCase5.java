@@ -1,42 +1,29 @@
 package TestCases;
 
-import Common.Utilities;
-import Constant.Constant;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestCase5 {
-    @BeforeMethod
-    public void beforeMethod(){
-        System.out.println("Pre-condition");
+public class TestCase5 extends TestBase{
 
-        System.setProperty("webdriver.chrome.driver", Utilities.getProjectPath() + "\\Executable\\chromedriver.exe");
-        Constant.WEBDRIVER = new ChromeDriver();
-        Constant.WEBDRIVER.manage().window().maximize();
-    }
-    @AfterMethod
-    public void afterMethod(){
-        System.out.println("Post-condition");
-        Constant.WEBDRIVER.quit();
-    }
 
-    @Test
+    @Test(description = "TC05 - System shows message when user enters wrong password several times ")
     public void TC05(){
-        System.out.println("TC05 - System shows message when user enters wrong password several times ");
+        System.out.println();
         HomePage homePage = new HomePage();
+        LoginPage loginPage = new LoginPage();
+        // 1. Navigate to QA Railway Website
         homePage.open();
-        int i;
 
-            LoginPage loginPage = homePage.gotoLoginPage();
-            for (i=1; i<=4;i++) {
-                loginPage.InvalidPassword(Constant.USERNAME,"123456");
-            }
-        String actualMsg = loginPage.login(Constant.USERNAME, "12345").getErrorMessage();
+        //2. Click on "Login" tab
+            loginPage.gotoLoginPage();
+
+            //3. Enter valid information into "Username" textbox except "Password" textbox.
+        //4. Click on "Login" button
+        //5. Repeat step 3 three more times.
+        loginPage.MultiBookticket();
+        String actualMsg = loginPage.getErrorMessage();
         String expectedMsg = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
         Assert.assertEquals(actualMsg, expectedMsg, "An error message not display");
     }

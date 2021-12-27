@@ -11,7 +11,10 @@ public class GeneralPage {
         private final By tabLogout = By.xpath("//div[@id='menu']//a[@href='/Account/Logout']");
         private final By lbWelcomeMessage = By.xpath("//div[@class='account']/strong");
         private final By tabBookticket = By.xpath("//div[@id='menu']//a[@href='/Page/BookTicketPage.cshtml']");
-        private final By lbErrorMessage = By.xpath("<p class='message error LoginForm'>\n" + "Invalid username or password. Please try again.        </p>");
+        private final By lbErrorMessage = By.xpath("//p[@class='message error LoginForm']");
+        private final By tabRegister = By.xpath("//div[@id='menu']//a[@href='/Account/Register.cshtml']");
+        private final By lbChangePassword = By.xpath("//a[@href='/Account/ChangePassword.cshtml']");
+
         //Elemnets
         protected  WebElement getTabLogin(){
             return Constant.WEBDRIVER.findElement(tabLogin);
@@ -26,18 +29,29 @@ public class GeneralPage {
             return Constant.WEBDRIVER.findElement(lbWelcomeMessage);
         }
         protected  WebElement gettabBookTicket() {return Constant.WEBDRIVER.findElement(tabBookticket);}
+        protected  WebElement gettabRegister() {return Constant.WEBDRIVER.findElement(tabRegister);}
         protected  WebElement getlbErrorMessage(){return Constant.WEBDRIVER.findElement(lbErrorMessage);}
+        protected WebElement getlbChangePassword(){return Constant.WEBDRIVER.findElement(lbChangePassword);}
+
         //Methods
         public String getWelcomeMessage(){
             return this.getlbWelcomeMessage().getText();
         }
         public String getErrorMessage(){return this.getlbErrorMessage().getText();}
-        public LoginPage gotoLoginPage(){
+
+
+
+        public void gotoLoginPage(){
             this.getTabLogin().click();
-            return new LoginPage();
+
         }
-        public LoginPage gotoBookticket(){
+        public void gotoBookticket(){
             this.gettabBookTicket().click();
-            return new LoginPage();
+
         }
+        public  void gotoRegister(){
+            this.gettabRegister().click();
+        }
+
+        public void gotoChangePassword(){this.getlbChangePassword().click();}
 }

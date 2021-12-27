@@ -1,40 +1,30 @@
 package TestCases;
 
-import Common.Utilities;
 import Constant.Constant;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestCase2 {
-    @BeforeMethod
-    public void beforeMethod(){
-        System.out.println("Pre-condition");
+public class TestCase2 extends TestBase{
 
-        System.setProperty("webdriver.chrome.driver", Utilities.getProjectPath() + "\\Executable\\chromedriver.exe");
-        Constant.WEBDRIVER = new ChromeDriver();
-        Constant.WEBDRIVER.manage().window().maximize();
-    }
-    @AfterMethod
-    public void afterMethod(){
-        System.out.println("Post-condition");
-        Constant.WEBDRIVER.quit();
-    }
 
-    @Test
+    @Test(description = "TC02 - User can't login with blank 'Username' textbox")
     public void TC02(){
-        System.out.println("TC02 - User can't login with blank 'Username' textbox");
+        System.out.println();
         HomePage homePage = new HomePage();
+        LoginPage loginPage = new LoginPage();
+        //1. Navigate to QA Railway Website
         homePage.open();
 
-        LoginPage loginPage = homePage.gotoLoginPage();
-        String actualMsg = loginPage.login("", Constant.PASSWORD).getWelcomeMessage();
-        String expectedMsg = "There was a problem with your login and/or errors exist in your form. ";
+        //2. Click on "Login" tab
+        loginPage.gotoLoginPage();
 
-        Assert.assertEquals(actualMsg, expectedMsg,"Invalid Username");
+        //3. User doesn't type any words into "Username" textbox but enter valid information into "Password" textbox
+        //4. Click on "Login" button
+        loginPage.login("", Constant.PASSWORD);
+        String actualMsg = loginPage.getErrorMessage();
+        String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
+        Assert.assertEquals(actualMsg, expectedMsg,"An error message display");
     }
 }
