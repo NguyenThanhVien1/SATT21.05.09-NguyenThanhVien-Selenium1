@@ -18,7 +18,7 @@ public class TestCase7 extends TestBase{
         registerPage.gotoRegister();
 
         //3. Enter valid information into all fields and  4. Click on "Register" button
-        registerPage.Register("viengf@gmail.com","123456789","12345678","123456789");
+        registerPage.Register("viength@gmail.com","123456789","12345678","123456789");
         String actualMsg = registerPage.getSuccessfully();
         String expectedMsg = "Registration Confirmed! You can now log in to the site.";
         Assert.assertEquals(actualMsg, expectedMsg,"A message displayed as expected");

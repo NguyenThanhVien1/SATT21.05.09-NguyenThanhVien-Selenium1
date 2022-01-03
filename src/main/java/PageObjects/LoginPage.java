@@ -13,10 +13,7 @@ public class LoginPage extends GeneralPage {
         private final By LbLogin = By.xpath("//h1[@align='center']");
 
         //Elements
-        public WebElement getTxtUsername()
-        {
-            return Constant.WEBDRIVER.findElement(Username);
-        }
+        public WebElement getTxtUsername() {return Constant.WEBDRIVER.findElement(Username);}
         public WebElement getTxtPassword()
         {
             return Constant.WEBDRIVER.findElement(Password);
