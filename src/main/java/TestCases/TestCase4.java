@@ -1,5 +1,7 @@
 package TestCases;
 
+import Constant.Constant;
+import PageObjects.BookTicket;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import org.testng.Assert;
@@ -8,18 +10,21 @@ import org.testng.annotations.Test;
 public class TestCase4 extends TestBase{
 
 
-    @Test(description = "TC04 - Login page displays when un-logged User clicks on 'Book ticket' tab ")
+    @Test(description = "TC04 - User is redirected to Book ticket page after logging in ")
     public void TC04(){
         System.out.println();
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
+        BookTicket bookTicket = new BookTicket();
         //1. Navigate to QA Railway Website
         homePage.open();
 
         //2. Click on "Book ticket" tab
         loginPage.gotoBookticket();
-        String actualMsg = loginPage.getLbLoginPage();
-        String expectedMsg = "Login page";
-        Assert.assertEquals(actualMsg, expectedMsg,"Login page displays instead of Book ticket page");
+        //3. Login with valid account
+        loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+        String actualMsg = bookTicket.getBookticketCenter();
+        String expectedMsg = "Book ticket";
+        Assert.assertEquals(actualMsg, expectedMsg,"Book ticket page displays with Book ticket form opens");
     }
 }

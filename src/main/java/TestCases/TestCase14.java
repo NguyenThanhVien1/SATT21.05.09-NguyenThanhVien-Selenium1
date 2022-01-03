@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestCase14 extends TestBase{
-    @Test(description = "TC10 - User can book 1 ticket at a time")
+    @Test(description = "TC14 - User can book many tickets at a time")
     public void TC14(){
         System.out.println();
         HomePage homePage = new HomePage();
@@ -26,9 +26,11 @@ public class TestCase14 extends TestBase{
         loginPage.gotoBookticket();
 
         //4. Select a "Depart date" from the list
-        //5. Select "Sài Gòn" for "Depart from" and "Nha Trang" for "Arrive at".
-        bookTicket.BookTicket("1/8/2022","Sài Gòn","Nha Trang","Hard seat","1");
-
+        //5. Select "Nha Trang" for "Depart from" and "Sài Gòn" for "Arrive at".
+        //6. Select "Soft seat with air conditioner" for "Seat type"
+        //7. Select "5" for "Ticket amount"
+        //8. Click on "Book ticket" button
+        bookTicket.BookTicket("1/9/2022","Nha Trang","Sài Gòn","Soft seat with air conditioner","4");
         String actualMsg = bookTicket.getBookticketMsg();
         String expectedMsg = "Ticket booked successfully!";
         Assert.assertEquals(actualMsg, expectedMsg,"Message 'Ticket booked successfully!' displays.");

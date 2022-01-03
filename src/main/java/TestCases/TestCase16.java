@@ -26,11 +26,17 @@ public class TestCase16 extends TestBase{
 
         //3. Book a ticket
         loginPage.gotoBookticket();
-        bookTicket.BookTicket("2/3/2022","Sài Gòn","Nha Trang","Hard seat","1");
+        bookTicket.BookTicket("1/9/2022","Sài Gòn","Nha Trang","Hard seat","1");
+
         //4. Click on "My ticket" tab
         myTicket.gotoMyTicket();
+
         //5. Click on "Cancel" button of ticket which user want to cancel.
-        String actualMsg = bookTicket.getBookticketMsg();
+        myTicket.getCancelBnt();
+
+        //6. Click on "OK" button on Confirmation message "Are you sure?"
+
+        String actualMsg = myTicket.getErrorMessage();
         String expectedMsg = "Ticket booked successfully!";
         Assert.assertEquals(actualMsg, expectedMsg,"Message 'Ticket booked successfully!' displays.");
 

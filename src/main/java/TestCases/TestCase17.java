@@ -26,11 +26,13 @@ public class TestCase17 extends TestBase{
         loginPage.gotoBookticket();
 
         //4. Book 10 tickets
-        //5. Select "Sài Gòn" for "Depart from" and "Nha Trang" for "Arrive at".
-        bookTicket.BookTicket("1/8/2022", "Sài Gòn", "Nha Trang", "Hard seat", "1");
-
-        String actualMsg = bookTicket.getBookticketMsg();
-        String expectedMsg = "Ticket booked successfully!";
-        Assert.assertEquals(actualMsg, expectedMsg, "Message 'Ticket booked successfully!' displays.");
+        //5. Click on "Book ticket" tab again
+        bookTicket.BookTicket("1/8/2022", "Nha Trang", "Sài Gòn", "Hard seat", "2");
+        //6. Book one more ticket
+        bookTicket.gotoBookticket();
+        bookTicket.BookTicket("1/8/2022", "Nha Trang", "Phan Thiết", "Hard seat", "1");
+        String actualMsg = bookTicket.getBookTicketerror();
+        String expectedMsg = "There're errors in the form. Please correct the errors and try again.";
+        Assert.assertEquals(actualMsg, expectedMsg, "Error message 'There're errors in the form. Please correct the errors and try again.' displays above the form.");
     }
 }

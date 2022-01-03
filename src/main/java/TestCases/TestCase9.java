@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestCase9 extends TestBase{
-    @Test(description = "TC09 - User can change password")
+    @Test(description = "TC09 - User can't change password when 'New Password' and 'Confirm Password' are different.")
     public void TC09(){
         System.out.println();
         HomePage homePage = new HomePage();
@@ -26,11 +26,11 @@ public class TestCase9 extends TestBase{
 
         //3. Click on "Change Password" tab
         changePassword.gotoChangePassword();
-        //4. Enter valid value into all fields. and 5. Click on "Change Password" button
-        changePassword.ChangePassword("12345678","123456789","123456789");
-        String actualMsg = changePassword.getSuccessfullyPassword();
-        String expectedMsg = "Your password has been updated!";
-        Assert.assertEquals(actualMsg, expectedMsg,"A message display");
+        //4. Enter valid information into "Current Password" textbox but enter "a123:"/{}!@$\" into "New Password" textbox and "b456:"/{}!@$\" into "Confirm Password"
+        changePassword.ChangePassword("12345678","a123:\'/{}!@$\\","b456:\"/{}!@$\\");
+        String actualMsg = changePassword.getErrorMessageChangePassword();
+        String expectedMsg = "Password change failed. Please correct the errors and try again.";
+        Assert.assertEquals(actualMsg, expectedMsg,"An error message display");
 
     }
 }

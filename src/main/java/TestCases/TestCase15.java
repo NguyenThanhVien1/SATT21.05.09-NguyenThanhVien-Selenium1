@@ -24,10 +24,10 @@ public class TestCase15 extends TestBase{
 
         //3. Click on "Timetable" tab
         loginPage.gotoTimeTable();
-        //4. Click on "book ticket" link of the route from "Huế" to "Sài Gòn"
-        timeTable.Bookticket17();
+        //4. Click on "check price" link of the route from "Đà Nẵng" to "Sài Gòn"
+        timeTable.getCheckPrice();
         String actualMsg = timeTable.getDepartFormDisplay();
-        String expectedMsg = "Huế";
+        String expectedMsg = "Đà Nẵng";
         String actualMsg2 = timeTable.getArriveAtDisplay();
         String expectedMsg2 = "Sài Gòn";
         Assert.assertEquals(actualMsg, expectedMsg,"'Book ticket' page is loaded with correct  'Depart from' and 'Arrive at' values.");

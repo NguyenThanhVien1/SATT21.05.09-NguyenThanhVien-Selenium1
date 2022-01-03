@@ -18,6 +18,8 @@ public class GeneralPage {
         private final By MyTicketbnt = By.xpath("//a[@href='/Page/ManageTicket.cshtml']");
 
 
+
+
         //Elemnets
         protected  WebElement getTabLogin(){
             return Constant.WEBDRIVER.findElement(tabLogin);
@@ -37,6 +39,8 @@ public class GeneralPage {
         protected WebElement getlbChangePassword(){return Constant.WEBDRIVER.findElement(lbChangePassword);}
         protected WebElement getTimeTablebnt(){return Constant.WEBDRIVER.findElement(TimeTablebnt);}
         protected WebElement getMyTicketbnt(){return Constant.WEBDRIVER.findElement(MyTicketbnt);}
+
+
 
         //Methods
         public String getWelcomeMessage(){
@@ -61,4 +65,6 @@ public class GeneralPage {
         public void gotoChangePassword(){this.getlbChangePassword().click();}
         public void gotoTimeTable(){this.getTimeTablebnt().click();}
         public void gotoMyTicket(){this.getMyTicketbnt().click();}
+
+
 }
