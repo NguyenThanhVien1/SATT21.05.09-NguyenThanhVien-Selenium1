@@ -8,7 +8,7 @@ public class LoginPage extends GeneralPage {
         //Locators
         private final By Username = By.id("username");
         private final By Password = By.id("password");
-        private final By Login = By.xpath("//input[@value='login']");
+        private final By Login = By.xpath("//input[@value='Login']");
         private final By LoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
         private final By LbLogin = By.xpath("//h1[@align='center']");
 

@@ -27,7 +27,7 @@ public class TestCase17 extends TestBase{
 
         //4. Book 10 tickets
         //5. Click on "Book ticket" tab again
-        bookTicket.BookTicket("1/8/2022", "Nha Trang", "Sài Gòn", "Hard seat", "2");
+        bookTicket.BookTicket("1/8/2022", "Nha Trang", "Sài Gòn", "Hard seat", "10");
         //6. Book one more ticket
         bookTicket.gotoBookticket();
         bookTicket.BookTicket("1/8/2022", "Nha Trang", "Phan Thiết", "Hard seat", "1");

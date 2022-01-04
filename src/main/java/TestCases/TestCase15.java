@@ -26,11 +26,9 @@ public class TestCase15 extends TestBase{
         loginPage.gotoTimeTable();
         //4. Click on "check price" link of the route from "Đà Nẵng" to "Sài Gòn"
         timeTable.getCheckPrice();
-        String actualMsg = timeTable.getDepartFormDisplay();
-        String expectedMsg = "Đà Nẵng";
-        String actualMsg2 = timeTable.getArriveAtDisplay();
-        String expectedMsg2 = "Sài Gòn";
-        Assert.assertEquals(actualMsg, expectedMsg,"'Book ticket' page is loaded with correct  'Depart from' and 'Arrive at' values.");
+        String actualMsg = timeTable.getTicketTableShow();
+        String expectedMsg = "Ticket price from Đà Nẵng to Sài Gòn";
+        Assert.assertEquals(actualMsg, expectedMsg,"'Ticket Price' page is loaded." + "Ticket table shows 'Ticket price from Đà Nẵng to Sài Gòn'.");
 
     }
 }

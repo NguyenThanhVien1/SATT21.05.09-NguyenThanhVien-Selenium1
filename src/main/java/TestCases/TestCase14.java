@@ -30,9 +30,9 @@ public class TestCase14 extends TestBase{
         //6. Select "Soft seat with air conditioner" for "Seat type"
         //7. Select "5" for "Ticket amount"
         //8. Click on "Book ticket" button
-        bookTicket.BookTicket("1/9/2022","Nha Trang","Sài Gòn","Soft seat with air conditioner","4");
+        bookTicket.BookTicket("1/9/2022", "Nha Trang","Sài Gòn","Soft seat with air conditioner","5");
         String actualMsg = bookTicket.getBookticketMsg();
-        String expectedMsg = "Ticket booked successfully!";
+        String expectedMsg = "Ticket Booked Successfully!";
         Assert.assertEquals(actualMsg, expectedMsg,"Message 'Ticket booked successfully!' displays.");
 
     }

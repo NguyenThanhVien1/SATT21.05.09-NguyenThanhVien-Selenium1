@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestCase16 extends TestBase{
-    @Test(description = "TC10 - User can book 1 ticket at a time")
+    @Test(description = "TC16- User can book 1 ticket at a time")
     public void TC16(){
         System.out.println();
         HomePage homePage = new HomePage();
@@ -26,19 +26,16 @@ public class TestCase16 extends TestBase{
 
         //3. Book a ticket
         loginPage.gotoBookticket();
-        bookTicket.BookTicket("1/9/2022","Sài Gòn","Nha Trang","Hard seat","1");
+        bookTicket.BookTicket("1/9/2022","Sài Gòn","Nha Trang","Hard seat","2");
 
         //4. Click on "My ticket" tab
         myTicket.gotoMyTicket();
 
         //5. Click on "Cancel" button of ticket which user want to cancel.
-        myTicket.getCancelBnt();
+        myTicket.getCancelBnt("1","Sài Gòn","Nha Trang");
 
         //6. Click on "OK" button on Confirmation message "Are you sure?"
-
-        String actualMsg = myTicket.getErrorMessage();
-        String expectedMsg = "Ticket booked successfully!";
-        Assert.assertEquals(actualMsg, expectedMsg,"Message 'Ticket booked successfully!' displays.");
+        Assert.assertFalse(myTicket.CancelRemove("1","Sài Gòn","Nha Trang"));
 
     }
 }

@@ -4,7 +4,10 @@ import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 public class BookTicket extends GeneralPage{
+
     //locator
     private final By DepartDate = By.xpath("//select[@name='Date']");
     private final By DepartFrom = By.xpath("//select[@name='DepartStation']");
@@ -29,11 +32,13 @@ public class BookTicket extends GeneralPage{
 
     //method
     public void BookTicket(String Departdate,String Departfrom, String Arriveat, String SeatType,String TicketAmount){
+
         this.getDepartDate().sendKeys(Departdate);
         this.getDepartFrom().sendKeys(Departfrom);
         this.getArriveAt().sendKeys(Arriveat);
         this.getSeatType().sendKeys(SeatType);
         this.getTicketAmount().sendKeys(TicketAmount);
+        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         this.getBookticketbnt().click();
 
     }

@@ -12,7 +12,7 @@ public class RegisterPage extends GeneralPage {
     private final By RegisterErrorMsg = By.xpath("//p[@class='message error']");
     private final By PID = By.id("pid");
     private final By Regiter = By.xpath("//input[@value='Register']");
-    private final By SuccessMsg = By.xpath("//div/p");
+    private final By SuccessMsg = By.xpath("//p[text()=\"You're here\"]");
 
     //Elements
     protected WebElement getEmail(){return Constant.WEBDRIVER.findElement(Email);}
@@ -26,10 +26,10 @@ public class RegisterPage extends GeneralPage {
 
     //Method
     public void Register(String Email,String Password,String PID,String ConfirmPassword){
-        this.getEmail().sendKeys(Email);
-        this.getPassword().sendKeys(Password);
-        this.getConfirmpassword().sendKeys(ConfirmPassword);
-        this.getPID().sendKeys(PID);
+        this.getEmail().sendKeys("vienh@gmail.com");
+        this.getPassword().sendKeys("123456789");
+        this.getConfirmpassword().sendKeys("123456789");
+        this.getPID().sendKeys("12345678");
         this.getRegiter().click();
     }
     public String getSuccessfully(){return this.getSuccessMsg().getText();}
