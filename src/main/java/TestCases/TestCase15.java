@@ -1,34 +1,51 @@
 package TestCases;
 
+import Common.JsonHelper;
+import Common.Utilities;
 import Constant.Constant;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import PageObjects.TimeTable;
+import com.google.gson.JsonObject;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestCase15 extends TestBase{
-    @Test(description = "TC10 - User can book 1 ticket at a time")
-    public void TC15(){
-        System.out.println();
+    @Test(description = "'Ticket price' page displays with ticket details after clicking on 'check price' link in 'Train timetable' page",dataProvider = "data-provider")
+    public void TC15(String departStation, String arriveAt){
+        System.out.println("'Ticket price' page displays with ticket details after clicking on 'check price' link in 'Train timetable' page");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         TimeTable timeTable = new TimeTable();
 
-        //1. Navigate to QA Railway Website
+        System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
 
-        //2. Click on "Login" tab
+        System.out.println("2. Click on 'Login' tab");
         loginPage.gotoLoginPage();
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
 
-        //3. Click on "Timetable" tab
+        System.out.println("3. Click on 'Timetable' tab");
         loginPage.gotoTimeTable();
-        //4. Click on "check price" link of the route from "Đà Nẵng" to "Sài Gòn"
-        timeTable.getCheckPrice();
+
+        System.out.println("4. Click on 'check price' link of the route from 'Đà Nẵng' to 'Sài Gòn'");
+        timeTable.ClickLinkCheckPrice(departStation,arriveAt);
         String actualMsg = timeTable.getTicketTableShow();
         String expectedMsg = "Ticket price from Đà Nẵng to Sài Gòn";
         Assert.assertEquals(actualMsg, expectedMsg,"'Ticket Price' page is loaded." + "Ticket table shows 'Ticket price from Đà Nẵng to Sài Gòn'.");
 
+    }
+    @DataProvider(name = "data-provider")
+    public Object[][] dataProvider(){
+        String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";
+        JsonObject jsonpObject = JsonHelper.getJsonObject(filePath);
+        JsonObject dataTC15 = jsonpObject.getAsJsonObject("TC15");
+        String departStation = dataTC15.get("Depart Station").getAsString();
+        String arriveAt = dataTC15.get("Arrive Station").getAsString();
+        Object[][] object = new Object[][]{
+                {departStation, arriveAt}
+        };
+        return object;
     }
 }

@@ -15,5 +15,6 @@ public class TicketpricePage {
 
     //Method
     public void gotoTicketPrice(){this.getTicketPricelb().click();}
+
     public String GetTicketPriceCenter(){return this.getTicketPricecenter().getText();}
 }

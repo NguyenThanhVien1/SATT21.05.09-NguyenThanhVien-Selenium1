@@ -1,5 +1,6 @@
 package TestCases;
 
+import Constant.Constant;
 import PageObjects.HomePage;
 import PageObjects.RegisterPage;
 import org.testng.Assert;
@@ -11,15 +12,14 @@ public class TestCase11 extends TestBase{
         System.out.println();
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
-        //1. Navigate to QA Railway Website
+        System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
 
-        //2. Click on "Register" tab
+        System.out.println("2. Click on 'Login' tab");
         registerPage.gotoRegister();
 
-        //3. Enter valid email address and leave other fields empty
-        // 4. Click on "Register" button
-        registerPage.Register("vienz@gmail.com","","","123456789");
+        System.out.println("3. Enter valid email address and leave other fields empty and 4. Click on 'Register' button");
+        registerPage.Register(Constant.USERNAME,"",Constant.PASSWORD,"");
         String actualMsg = registerPage.getErrorMsgRegiter();
         String expectedMsg = "There're errors in the form. Please correct the errors and try again.";
         Assert.assertEquals(actualMsg, expectedMsg,"An error message displayed as expected");

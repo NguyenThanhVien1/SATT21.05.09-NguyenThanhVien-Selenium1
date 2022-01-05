@@ -4,6 +4,8 @@ import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginPage extends GeneralPage {
         //Locators
         private final By Username = By.id("username");
@@ -33,22 +35,23 @@ public class LoginPage extends GeneralPage {
             //Submit login credentials
             this.getTxtUsername().sendKeys(username);
             this.getTxtPassword().sendKeys(password);
+            Constant.WEBDRIVER.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             this.getBntLogin().click();
-
         }
+
         public void InvalidPassword(String username, String password){
             this.getTxtUsername().sendKeys("thanhle@logigear.com");
             this.getTxtPassword().sendKeys("123456");
             this.getBntLogin().click();
-
         }
+
     public void MultiBookticket(){
         int i;
         for (i=1; i<=4;i++) {
             login(Constant.USERNAME,"");
         }
-
     }
 
     public String getLbLoginPage(){return this.getLbLogin().getText();}
+
 }

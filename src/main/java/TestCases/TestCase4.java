@@ -12,16 +12,17 @@ public class TestCase4 extends TestBase{
 
     @Test(description = "TC04 - User is redirected to Book ticket page after logging in ")
     public void TC04(){
-        System.out.println();
+        System.out.println("TC04 - User is redirected to Book ticket page after logging in ");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicket bookTicket = new BookTicket();
-        //1. Navigate to QA Railway Website
+        System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
 
-        //2. Click on "Book ticket" tab
+        System.out.println("2. Click on 'Book ticket' tab");
         loginPage.gotoBookticket();
-        //3. Login with valid account
+
+        System.out.println("//3. Login with valid account");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         String actualMsg = bookTicket.getBookticketCenter();
         String expectedMsg = "Book ticket";

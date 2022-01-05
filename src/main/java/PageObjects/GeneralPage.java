@@ -1,9 +1,8 @@
 package PageObjects;
 
+import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import Constant.Constant;
 
 public class GeneralPage {
         //locators
@@ -16,9 +15,6 @@ public class GeneralPage {
         private final By lbChangePassword = By.xpath("//a[@href='/Account/ChangePassword.cshtml']");
         private final By TimeTablebnt = By.xpath("//a[@href='TrainTimeListPage.cshtml']");
         private final By MyTicketbnt = By.xpath("//a[@href='/Page/ManageTicket.cshtml']");
-
-
-
 
         //Elemnets
         protected  WebElement getTabLogin(){
@@ -40,31 +36,25 @@ public class GeneralPage {
         protected WebElement getTimeTablebnt(){return Constant.WEBDRIVER.findElement(TimeTablebnt);}
         protected WebElement getMyTicketbnt(){return Constant.WEBDRIVER.findElement(MyTicketbnt);}
 
-
-
         //Methods
         public String getWelcomeMessage(){
             return this.getlbWelcomeMessage().getText();
         }
+
         public String getErrorMessage(){return this.getlbErrorMessage().getText();}
 
+        public void gotoLoginPage(){this.getTabLogin().click();}
 
+        public void gotoBookticket(){this.gettabBookTicket().click();}
 
-        public void gotoLoginPage(){
-            this.getTabLogin().click();
-
-        }
-        public void gotoBookticket(){
-            this.gettabBookTicket().click();
-
-        }
         public  void gotoRegister(){
             this.gettabRegister().click();
         }
 
         public void gotoChangePassword(){this.getlbChangePassword().click();}
-        public void gotoTimeTable(){this.getTimeTablebnt().click();}
-        public void gotoMyTicket(){this.getMyTicketbnt().click();}
 
+        public void gotoTimeTable(){this.getTimeTablebnt().click();}
+
+        public void gotoMyTicket(){this.getMyTicketbnt().click();}
 
 }

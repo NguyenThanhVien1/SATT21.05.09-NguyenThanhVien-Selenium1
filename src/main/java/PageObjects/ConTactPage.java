@@ -13,4 +13,5 @@ public class ConTactPage {
 
     //method
     public void gotoConTact(){this.getContactlb().click();}
+
 }

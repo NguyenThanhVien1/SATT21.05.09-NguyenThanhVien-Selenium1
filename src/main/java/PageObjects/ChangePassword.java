@@ -13,8 +13,6 @@ public class ChangePassword extends GeneralPage{
     private final By ChangePassword = By.xpath("//input[@value='Change Password']");
     private final By ChangeSuccessFully = By.xpath("//p[@class='message success']");
 
-
-
     //Elemnets
     protected WebElement getConfirmPassword(){return Constant.WEBDRIVER.findElement(ConfirmPassword);}
     protected WebElement getNewPassword(){return Constant.WEBDRIVER.findElement(NewPassword);};
@@ -23,8 +21,6 @@ public class ChangePassword extends GeneralPage{
     protected WebElement getChangePassword(){return Constant.WEBDRIVER.findElement(ChangePassword);}
     protected WebElement getChangeSuccessFully(){return Constant.WEBDRIVER.findElement(ChangeSuccessFully);}
 
-
-
     //method
     public void ChangePassword(String CurrentPassword,String NewPassword,String ConfirmPassword){
         this.getCurrentPassword().sendKeys(CurrentPassword);
@@ -32,7 +28,9 @@ public class ChangePassword extends GeneralPage{
         this.getConfirmPassword().sendKeys(ConfirmPassword);
         this.getChangePassword().click();
     }
+
     public String getSuccessfullyPassword(){return this.getChangeSuccessFully().getText();}
+
     public String getErrorMessageChangePassword(){return this.getErrorMsg().getText();}
 
 }

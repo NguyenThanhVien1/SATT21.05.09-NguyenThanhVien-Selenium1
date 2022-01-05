@@ -1,13 +1,25 @@
 {
   "TC14": {
-    "Depart date":  "",
     "Depart from": "Nha Trang",
     "Arrive at": "Sài Gòn",
-    "Seat type": "Soft seat with air conditioner",
+    "Seat type": "Soft seat",
     "Ticket amount": "5"
-
   },
   "TC15": {
-
+    "Depart Station": "Đà Nẵng",
+    "Arrive Station": "Sài Gòn"
+  },
+  "TC16": {
+    "Depart from": "Sài Gòn",
+    "Arrive at": "Nha Trang",
+    "Seat type": "Hard seat",
+    "Ticket amount": "2"
+  },
+  "TC17": {
+    "Depart from": "Nha Trang",
+    "Arrive at": "Sài Gòn",
+    "Seat type": "Hard seat",
+    "Ticket amount": "10"
   }
+
 }

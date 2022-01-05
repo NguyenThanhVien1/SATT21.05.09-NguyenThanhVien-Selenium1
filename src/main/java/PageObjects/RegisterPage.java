@@ -1,8 +1,10 @@
 package PageObjects;
 
 import Constant.Constant;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 
 public class RegisterPage extends GeneralPage {
     //locator
@@ -23,7 +25,6 @@ public class RegisterPage extends GeneralPage {
     protected  WebElement getRegiter(){return Constant.WEBDRIVER.findElement(Regiter);}
     protected WebElement getSuccessMsg(){return Constant.WEBDRIVER.findElement(SuccessMsg);}
 
-
     //Method
     public void Register(String Email,String Password,String PID,String ConfirmPassword){
         this.getEmail().sendKeys("vienh@gmail.com");
@@ -33,5 +34,20 @@ public class RegisterPage extends GeneralPage {
         this.getRegiter().click();
     }
     public String getSuccessfully(){return this.getSuccessMsg().getText();}
+
     public String getErrorMsgRegiter(){return this.getRegisterErrorMsg().getText();}
+
+    public String autoEmail;
+
+    public String randomEmail() {
+        String generateEmail = RandomStringUtils.randomAlphabetic(6);
+        autoEmail = generateEmail + "@gmail.com";
+        return autoEmail;
+    }
+
+    public String randomPID() {
+        String AutoPID = RandomStringUtils.randomNumeric(8);
+        return AutoPID;
+    }
+
 }

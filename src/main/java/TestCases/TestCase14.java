@@ -1,39 +1,58 @@
 package TestCases;
 
+import Common.JsonHelper;
+import Common.Utilities;
 import Constant.Constant;
 import PageObjects.BookTicket;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
+import com.google.gson.JsonObject;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.text.ParseException;
+
 public class TestCase14 extends TestBase{
-    @Test(description = "TC14 - User can book many tickets at a time")
-    public void TC14(){
-        System.out.println();
+    @Test(description = "TC14 - User can book many tickets at a time",dataProvider = "data-provider")
+    public void TC014(String departStation, String arriveStation, String seatType, String ticketAmount) throws IOException, ParseException, InterruptedException{
+        System.out.println("TC14 - User can book many tickets at a time");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicket bookTicket = new BookTicket();
-
-        //1. Navigate to QA Railway Website
+        System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
 
-        //2. Click on "Login" tab
+        System.out.println("2. Click on 'Login' tab");
         loginPage.gotoLoginPage();
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
 
-        //3. Click on "Book ticket" tab
+        System.out.println("3. Click on 'Book ticket' tab");
         loginPage.gotoBookticket();
 
-        //4. Select a "Depart date" from the list
-        //5. Select "Nha Trang" for "Depart from" and "Sài Gòn" for "Arrive at".
-        //6. Select "Soft seat with air conditioner" for "Seat type"
-        //7. Select "5" for "Ticket amount"
-        //8. Click on "Book ticket" button
-        bookTicket.BookTicket("1/9/2022", "Nha Trang","Sài Gòn","Soft seat with air conditioner","5");
-        String actualMsg = bookTicket.getBookticketMsg();
-        String expectedMsg = "Ticket Booked Successfully!";
-        Assert.assertEquals(actualMsg, expectedMsg,"Message 'Ticket booked successfully!' displays.");
-
+        System.out.println("4. Select a 'Depart date' from the list");
+        bookTicket.getDepartFrom(departStation);
+        bookTicket.getArriveAt(arriveStation);
+        bookTicket.getSeatType(seatType);
+        bookTicket.getTicketAmount(ticketAmount);
+        bookTicket.clickBtnBookTicket();
+        String actualMsg1 = bookTicket.getBookticketMsg();
+        String expectedMsg1 = "Ticket Booked Successfully!";
+        Assert.assertEquals(actualMsg1, expectedMsg1, "Success msg is not display as expected");
+    }
+    @DataProvider(name = "data-provider")
+    public Object[][] dataProvider(){
+        String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";
+        JsonObject jsonpObject = JsonHelper.getJsonObject(filePath);
+        JsonObject dataTC14 = jsonpObject.getAsJsonObject("TC14");
+        String departStation = dataTC14.get("Depart from").getAsString();
+        String arriveStation = dataTC14.get("Arrive at").getAsString();
+        String seatType = dataTC14.get("Seat type").getAsString();
+        String ticketAmount = dataTC14.get("Ticket amount").getAsString();
+        Object[][] object = new Object[][]{
+                {departStation, arriveStation, seatType, ticketAmount}
+        };
+        return object;
     }
 }
