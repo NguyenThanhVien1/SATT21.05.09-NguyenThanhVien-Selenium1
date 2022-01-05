@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class TestCase15 extends TestBase{
     @Test(description = "'Ticket price' page displays with ticket details after clicking on 'check price' link in 'Train timetable' page",dataProvider = "data-provider")
-    public void TC15(String departStation, String arriveAt){
+    public void TC15(String departStation, String arriveAt, String HS , String SS,String SSC, String HB, String SBC, String SB){
         System.out.println("'Ticket price' page displays with ticket details after clicking on 'check price' link in 'Train timetable' page");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -35,6 +35,29 @@ public class TestCase15 extends TestBase{
         String expectedMsg = "Ticket price from Đà Nẵng to Sài Gòn";
         Assert.assertEquals(actualMsg, expectedMsg,"'Ticket Price' page is loaded." + "Ticket table shows 'Ticket price from Đà Nẵng to Sài Gòn'.");
 
+        String actualMsg2 = timeTable.getSeatTypePrice("HS");
+        String expectedMsg2 = HS;
+        Assert.assertEquals(actualMsg, expectedMsg,"Price is not correct");
+
+        String actualMsg3 = timeTable.getSeatTypePrice("SS");
+        String expectedMsg3 = SS;
+        Assert.assertEquals(actualMsg, expectedMsg,"Price is not correct");
+
+        String actualMsg4 = timeTable.getSeatTypePrice("SSC");
+        String expectedMsg4 = SSC;
+        Assert.assertEquals(actualMsg, expectedMsg,"Price is not correct");
+
+        String actualMsg5 = timeTable.getSeatTypePrice("HB");
+        String expectedMsg5 = HB;
+        Assert.assertEquals(actualMsg, expectedMsg,"Price is not correct");
+
+        String actualMsg6 = timeTable.getSeatTypePrice("SB");
+        String expectedMsg6 = SB;
+        Assert.assertEquals(actualMsg, expectedMsg,"Price is not correct");
+
+        String actualMsg7 = timeTable.getSeatTypePrice("SBC");
+        String expectedMsg7 = SBC;
+        Assert.assertEquals(actualMsg, expectedMsg,"Price is not correct");
     }
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider(){
@@ -43,8 +66,14 @@ public class TestCase15 extends TestBase{
         JsonObject dataTC15 = jsonpObject.getAsJsonObject("TC15");
         String departStation = dataTC15.get("Depart Station").getAsString();
         String arriveAt = dataTC15.get("Arrive Station").getAsString();
+        String HS = dataTC15.get("HS").getAsString();
+        String SS = dataTC15.get("SS").getAsString();
+        String SSC = dataTC15.get("SSC").getAsString();
+        String HB = dataTC15.get("HB").getAsString();
+        String SB = dataTC15.get("SB").getAsString();
+        String SBC = dataTC15.get("SBC").getAsString();
         Object[][] object = new Object[][]{
-                {departStation, arriveAt}
+                {departStation, arriveAt,HS,SS,SSC,HB,SB,SBC}
         };
         return object;
     }

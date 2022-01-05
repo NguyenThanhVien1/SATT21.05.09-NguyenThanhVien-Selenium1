@@ -40,6 +40,22 @@ public class TestCase14 extends TestBase{
         String actualMsg1 = bookTicket.getBookticketMsg();
         String expectedMsg1 = "Ticket Booked Successfully!";
         Assert.assertEquals(actualMsg1, expectedMsg1, "Success msg is not display as expected");
+
+        String actualMsg2 = bookTicket.getResultDepart();
+        String expectedMsg2 = departStation;
+        Assert.assertEquals(actualMsg2, expectedMsg2, "Depart Station info not correct ");
+
+        String actualMsg3 = bookTicket.getResultArrive();
+        String expectedMsg3 = arriveStation;
+        Assert.assertEquals(actualMsg3, expectedMsg3, "Arrive Station info not correct ");
+
+        String actualMsg4 = bookTicket.getResultSeat();
+        String expectedMsg4 = seatType;
+        Assert.assertEquals(actualMsg4, expectedMsg4, "Seat Type info not correct ");
+
+        String actualMsg5 = bookTicket.getResultAmount();
+        String expectedMsg5 = ticketAmount;
+        Assert.assertEquals(actualMsg5, expectedMsg5, "Ticket Amount info not correct ");
     }
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider(){

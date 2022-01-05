@@ -7,7 +7,13 @@
   },
   "TC15": {
     "Depart Station": "Đà Nẵng",
-    "Arrive Station": "Sài Gòn"
+    "Arrive Station": "Sài Gòn",
+    "HS": "90000",
+    "SS" : "115000",
+    "SSC" : "140000",
+    "HB" : "190000",
+    "SB" : "240000",
+    "SBC" : "290000"
   },
   "TC16": {
     "Depart from": "Sài Gòn",

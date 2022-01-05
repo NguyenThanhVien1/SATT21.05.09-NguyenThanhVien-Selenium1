@@ -46,8 +46,8 @@ public class TestCase16 extends TestBase{
         System.out.println("6. Click on 'OK' button on Confirmation message 'Are you sure?'");
         myTicket.getCancelBnt("1","Sài Gòn","Nha Trang");
         Assert.assertFalse(myTicket.CancelRemove("1","Sài Gòn","Nha Trang"));
-
     }
+
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider(){
         String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";

@@ -44,7 +44,12 @@ public class TestCase17 extends TestBase{
         String actualMsg = bookTicket.getBookTicketerror();
         String expectedMsg = "There're errors in the form. Please correct the errors and try again.";
         Assert.assertEquals(actualMsg, expectedMsg, "Error message 'There're errors in the form. Please correct the errors and try again.' displays above the form.");
+
+        String actualMsg2 = bookTicket.getlbErrorMSG();
+        String expectedMsg2 = "You have booked 10 tickets. You can book no more.";
+        Assert.assertEquals(actualMsg2, expectedMsg2,"Error message display");
     }
+
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider(){
         String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";

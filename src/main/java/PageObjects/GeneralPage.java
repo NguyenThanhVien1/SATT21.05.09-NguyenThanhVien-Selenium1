@@ -15,6 +15,7 @@ public class GeneralPage {
         private final By lbChangePassword = By.xpath("//a[@href='/Account/ChangePassword.cshtml']");
         private final By TimeTablebnt = By.xpath("//a[@href='TrainTimeListPage.cshtml']");
         private final By MyTicketbnt = By.xpath("//a[@href='/Page/ManageTicket.cshtml']");
+    String lblPrice = "//th[contains(text(), 'Price (VND)')]/../td[count(//td[text()='%s']/preceding-sibling::td)+1]";
 
         //Elemnets
         protected  WebElement getTabLogin(){
@@ -35,6 +36,10 @@ public class GeneralPage {
         protected WebElement getlbChangePassword(){return Constant.WEBDRIVER.findElement(lbChangePassword);}
         protected WebElement getTimeTablebnt(){return Constant.WEBDRIVER.findElement(TimeTablebnt);}
         protected WebElement getMyTicketbnt(){return Constant.WEBDRIVER.findElement(MyTicketbnt);}
+
+        protected  WebElement getlblPrice(String seatType){
+            return Constant.WEBDRIVER.findElement(By.xpath(String.format(lblPrice,seatType)));
+        }
 
         //Methods
         public String getWelcomeMessage(){
@@ -57,4 +62,5 @@ public class GeneralPage {
 
         public void gotoMyTicket(){this.getMyTicketbnt().click();}
 
+        public String getSeatTypePrice(String seatType){return this.getlblPrice(seatType).getText();}
 }

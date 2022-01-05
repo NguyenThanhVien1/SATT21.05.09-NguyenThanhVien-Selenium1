@@ -23,5 +23,13 @@ public class TestCase11 extends TestBase{
         String actualMsg = registerPage.getErrorMsgRegiter();
         String expectedMsg = "There're errors in the form. Please correct the errors and try again.";
         Assert.assertEquals(actualMsg, expectedMsg,"An error message displayed as expected");
+
+        String actualMsg2 = registerPage.getPasswordErrMsg();
+        String expectedMsg2 = "Invalid password length.";
+        Assert.assertEquals(actualMsg2, expectedMsg2, "'Password' field error msg is not display as expected");
+
+        String actualMsg3 = registerPage.getPIDErrMsg();
+        String expectedMsg3 = "Invalid ID length.";
+        Assert.assertEquals(actualMsg3, expectedMsg3, "'PID' field error msg is not display as expected");
     }
 }
