@@ -9,9 +9,13 @@ public class ConTactPage {
     private final By Contactlb = By.xpath("//a[@href='/Page/Contact.cshtml']");
 
     //Elemnets
-    protected WebElement getContactlb(){return Constant.WEBDRIVER.findElement(Contactlb);}
+    protected WebElement getContactlb() {
+        return Constant.WEBDRIVER.findElement(Contactlb);
+    }
 
     //method
-    public void gotoConTact(){this.getContactlb().click();}
+    public void gotoConTact() {
+        this.getContactlb().click();
+    }
 
 }

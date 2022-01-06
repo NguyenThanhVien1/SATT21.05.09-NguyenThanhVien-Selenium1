@@ -5,11 +5,11 @@ import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestCase5 extends TestBase{
+public class TestCase5 extends TestBase {
 
 
     @Test(description = "TC05 - System shows message when user enters wrong password several times")
-    public void TC05(){
+    public void TC05() {
         System.out.println("TC05 - System shows message when user enters wrong password several times");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -17,7 +17,7 @@ public class TestCase5 extends TestBase{
         homePage.open();
 
         System.out.println("2. Click on 'Login' tab");
-            loginPage.gotoLoginPage();
+        loginPage.gotoLoginPage();
 
         System.out.println("3. Login invalid password and Repeat step 3 three more times.");
         loginPage.MultiBookticket();

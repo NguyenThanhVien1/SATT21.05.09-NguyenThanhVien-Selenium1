@@ -5,9 +5,9 @@ import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestCase8 extends TestBase{
+public class TestCase8 extends TestBase {
     @Test(description = "TC08 - User can't login with an account hasn't been activated")
-    public void TC08(){
+    public void TC08() {
         System.out.println();
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -21,6 +21,6 @@ public class TestCase8 extends TestBase{
         loginPage.login("vienq@gmail.com", "123456789");
         String actualMsg = loginPage.getErrorMessage();
         String expectedMsg = "Invalid username or password. Please try again.";
-        Assert.assertEquals(actualMsg, expectedMsg,"An error message display");
+        Assert.assertEquals(actualMsg, expectedMsg, "An error message display");
     }
 }

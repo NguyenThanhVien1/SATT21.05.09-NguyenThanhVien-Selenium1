@@ -6,11 +6,11 @@ import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Testcase1 extends TestBase{
+public class Testcase1 extends TestBase {
 
 
     @Test(description = "TC01 - User can log  into Railway with valid username and password")
-    public void TC01(){
+    public void TC01() {
         System.out.println("TC01 - User can log  into Railway with valid username and password");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -24,7 +24,7 @@ public class Testcase1 extends TestBase{
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         String actualMsg = loginPage.getWelcomeMessage();
         String expectedMsg = "Welcome " + Constant.USERNAME;
-        Assert.assertEquals(actualMsg, expectedMsg,"Welcome message is not displayed as expected");
+        Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
     }
 
 }

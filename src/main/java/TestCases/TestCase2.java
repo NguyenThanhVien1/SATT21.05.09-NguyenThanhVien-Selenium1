@@ -6,11 +6,11 @@ import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestCase2 extends TestBase{
+public class TestCase2 extends TestBase {
 
 
     @Test(description = "TC02 - User can't login with blank 'Username' textbox")
-    public void TC02(){
+    public void TC02() {
         System.out.println("TC02 - User can't login with blank 'Username' textbox");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -24,6 +24,6 @@ public class TestCase2 extends TestBase{
         loginPage.login("", Constant.PASSWORD);
         String actualMsg = loginPage.getErrorMessage();
         String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
-        Assert.assertEquals(actualMsg, expectedMsg,"An error message display");
+        Assert.assertEquals(actualMsg, expectedMsg, "An error message display");
     }
 }

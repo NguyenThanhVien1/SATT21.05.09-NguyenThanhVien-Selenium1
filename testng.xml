@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Test Suite">
+        <classes>
+            <class name="TestCases.Testcase1"/>
+            <class name="TestCases.TestCase2"/>
+            <class name="TestCases.TestCase3"/>
+            <class name="TestCases.TestCase4"/>
+            <class name="TestCases.TestCase5"/>
+            <class name="TestCases.TestCase6"/>
+            <class name="TestCases.TestCase7"/>
+            <class name="TestCases.TestCase9"/>
+            <class name="TestCases.TestCase10"/>
+            <class name="TestCases.TestCase11"/>
+            <class name="TestCases.TestCase14"/>
+            <class name="TestCases.TestCase15"/>
+            <class name="TestCases.TestCase16"/>
+            <class name="TestCases.TestCase17"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

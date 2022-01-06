@@ -9,8 +9,20 @@ public class LogOutPage {
     private final By LogOutlb = By.xpath("//a[@href='/Account/Logout']");
 
     //Elemnets
-    protected WebElement getLogOutlb(){return Constant.WEBDRIVER.findElement(LogOutlb);}
+    protected WebElement getLogOutlb() {
+        return Constant.WEBDRIVER.findElement(LogOutlb);
+    }
 
     //Methods
-    public void gotoLogOutLb(){this.getLogOutlb().click();}
+    public void gotoLogOutLb() {
+        this.getLogOutlb().click();
+    }
+
+    public boolean isLogoutDisplay() {
+        try {
+            return this.getLogOutlb().isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

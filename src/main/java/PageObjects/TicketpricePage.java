@@ -10,11 +10,20 @@ public class TicketpricePage {
     private final By TicketPiceCenter = By.xpath("//h1[@align='center']");
 
     //Elements
-    protected WebElement getTicketPricelb(){return Constant.WEBDRIVER.findElement(TicketPicelb);}
-    protected WebElement getTicketPricecenter(){return Constant.WEBDRIVER.findElement(TicketPiceCenter);}
+    protected WebElement getTicketPricelb() {
+        return Constant.WEBDRIVER.findElement(TicketPicelb);
+    }
+
+    protected WebElement getTicketPricecenter() {
+        return Constant.WEBDRIVER.findElement(TicketPiceCenter);
+    }
 
     //Method
-    public void gotoTicketPrice(){this.getTicketPricelb().click();}
+    public void gotoTicketPrice() {
+        this.getTicketPricelb().click();
+    }
 
-    public String GetTicketPriceCenter(){return this.getTicketPricecenter().getText();}
+    public String GetTicketPriceCenter() {
+        return this.getTicketPricecenter().getText();
+    }
 }

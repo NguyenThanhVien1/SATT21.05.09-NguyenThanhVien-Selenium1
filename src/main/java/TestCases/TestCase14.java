@@ -6,6 +6,7 @@ import Constant.Constant;
 import PageObjects.BookTicket;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
+import PageObjects.RegisterPage;
 import com.google.gson.JsonObject;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -14,19 +15,27 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.text.ParseException;
 
-public class TestCase14 extends TestBase{
-    @Test(description = "TC14 - User can book many tickets at a time",dataProvider = "data-provider")
-    public void TC014(String departStation, String arriveStation, String seatType, String ticketAmount) throws IOException, ParseException, InterruptedException{
-        System.out.println("TC14 - User can book many tickets at a time");
-        HomePage homePage = new HomePage();
-        LoginPage loginPage = new LoginPage();
-        BookTicket bookTicket = new BookTicket();
+public class TestCase14 extends TestBase {
+
+    HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
+    BookTicket bookTicket = new BookTicket();
+    RegisterPage registerPage = new RegisterPage();
+
+    @Test(description = "TC14 - User can book many tickets at a time", dataProvider = "data-provider")
+    public void TC014(String departStation, String arriveStation, String seatType, String ticketAmount) throws IOException, ParseException, InterruptedException {
+
+        System.out.println("Pre-condition: Create and activate a new account");
+        homePage.open();
+        registerPage.gotoRegister();
+        registerPage.Register(registerPage.randomEmail(), Constant.PASSWORD, registerPage.randomPID(), Constant.PASSWORD);
+
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
 
         System.out.println("2. Click on 'Login' tab");
         loginPage.gotoLoginPage();
-        loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+        loginPage.login(registerPage.autoEmail, Constant.PASSWORD);
 
         System.out.println("3. Click on 'Book ticket' tab");
         loginPage.gotoBookticket();
@@ -57,8 +66,9 @@ public class TestCase14 extends TestBase{
         String expectedMsg5 = ticketAmount;
         Assert.assertEquals(actualMsg5, expectedMsg5, "Ticket Amount info not correct ");
     }
+
     @DataProvider(name = "data-provider")
-    public Object[][] dataProvider(){
+    public Object[][] dataProvider() {
         String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";
         JsonObject jsonpObject = JsonHelper.getJsonObject(filePath);
         JsonObject dataTC14 = jsonpObject.getAsJsonObject("TC14");

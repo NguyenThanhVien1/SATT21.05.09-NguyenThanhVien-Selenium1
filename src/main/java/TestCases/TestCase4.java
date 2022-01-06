@@ -7,11 +7,11 @@ import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestCase4 extends TestBase{
+public class TestCase4 extends TestBase {
 
 
     @Test(description = "TC04 - User is redirected to Book ticket page after logging in ")
-    public void TC04(){
+    public void TC04() {
         System.out.println("TC04 - User is redirected to Book ticket page after logging in ");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -26,6 +26,6 @@ public class TestCase4 extends TestBase{
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         String actualMsg = bookTicket.getBookticketCenter();
         String expectedMsg = "Book ticket";
-        Assert.assertEquals(actualMsg, expectedMsg,"Book ticket page displays with Book ticket form opens");
+        Assert.assertEquals(actualMsg, expectedMsg, "Book ticket page displays with Book ticket form opens");
     }
 }
