@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="SATT21.05.09-NguyenThanhVien-Selenium1(failed)">
+    <classes>
+      <class name="TestCases.TestCase9">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="TC09"/>
+          <include name="closeTest"/>
+          <include name="initTest"/>
+        </methods>
+      </class> <!-- TestCases.TestCase9 -->
+    </classes>
+  </test> <!-- SATT21.05.09-NguyenThanhVien-Selenium1(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

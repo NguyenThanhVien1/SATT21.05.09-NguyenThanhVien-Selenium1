@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-01-06T22:00:13 ICT" name="Default Suite" finished-at="2022-01-06T22:00:32 ICT" duration-ms="18709">
+    <groups>
+    </groups>
+    <test started-at="2022-01-06T22:00:13 ICT" name="SATT21.05.09-NguyenThanhVien-Selenium1" finished-at="2022-01-06T22:00:32 ICT" duration-ms="18709">
+      <class name="TestCases.TestCase9">
+        <test-method is-config="true" signature="initTest()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:13 ICT" name="initTest" finished-at="2022-01-06T22:00:13 ICT" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:13 ICT" name="beforeMethod" finished-at="2022-01-06T22:00:20 ICT" duration-ms="6585" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC09()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:20 ICT" name="TC09" description="TC09 - User can&#039;t change password when &#039;New Password&#039; and &#039;Confirm Password&#039; are different." finished-at="2022-01-06T22:00:31 ICT" duration-ms="11270" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC09 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:31 ICT" name="afterMethod" finished-at="2022-01-06T22:00:32 ICT" duration-ms="653" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="closeTest()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:32 ICT" name="closeTest" finished-at="2022-01-06T22:00:32 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTest -->
+      </class> <!-- TestCases.TestCase9 -->
+    </test> <!-- SATT21.05.09-NguyenThanhVien-Selenium1 -->
+  </suite> <!-- Default Suite -->
+</testng-results>

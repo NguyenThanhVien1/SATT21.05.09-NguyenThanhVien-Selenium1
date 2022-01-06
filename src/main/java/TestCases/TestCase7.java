@@ -1,6 +1,6 @@
 package TestCases;
 
-import Constant.Constant;
+import Common.Constant;
 import PageObjects.HomePage;
 import PageObjects.RegisterPage;
 import org.testng.Assert;

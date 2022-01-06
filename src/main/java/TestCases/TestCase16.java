@@ -2,7 +2,7 @@ package TestCases;
 
 import Common.JsonHelper;
 import Common.Utilities;
-import Constant.Constant;
+import Common.Constant;
 import PageObjects.*;
 import com.google.gson.JsonObject;
 import org.testng.Assert;
@@ -53,9 +53,8 @@ public class TestCase16 extends TestBase {
 
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider() {
-        String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";
-        JsonObject jsonpObject = JsonHelper.getJsonObject(filePath);
-        JsonObject dataTC16 = jsonpObject.getAsJsonObject("TC16");
+        JsonObject jsonObject = JsonHelper.getJsonObject(Utilities.jsonProjectPath());
+        JsonObject dataTC16 = jsonObject.getAsJsonObject("TC16");
         String departStation = dataTC16.get("Depart from").getAsString();
         String arriveStation = dataTC16.get("Arrive at").getAsString();
         String seatType = dataTC16.get("Seat type").getAsString();

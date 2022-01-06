@@ -2,7 +2,7 @@ package TestCases;
 
 import Common.JsonHelper;
 import Common.Utilities;
-import Constant.Constant;
+import Common.Constant;
 import PageObjects.BookTicket;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
@@ -12,18 +12,13 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-import java.text.ParseException;
-
 public class TestCase14 extends TestBase {
-
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     BookTicket bookTicket = new BookTicket();
     RegisterPage registerPage = new RegisterPage();
-
     @Test(description = "TC14 - User can book many tickets at a time", dataProvider = "data-provider")
-    public void TC014(String departStation, String arriveStation, String seatType, String ticketAmount) throws IOException, ParseException, InterruptedException {
+    public void TC014(String departStation, String arriveStation, String seatType, String ticketAmount) {
 
         System.out.println("Pre-condition: Create and activate a new account");
         homePage.open();
@@ -69,9 +64,8 @@ public class TestCase14 extends TestBase {
 
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider() {
-        String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";
-        JsonObject jsonpObject = JsonHelper.getJsonObject(filePath);
-        JsonObject dataTC14 = jsonpObject.getAsJsonObject("TC14");
+        JsonObject jsonObject = JsonHelper.getJsonObject(Utilities.jsonProjectPath());
+        JsonObject dataTC14 = jsonObject.getAsJsonObject("TC14");
         String departStation = dataTC14.get("Depart from").getAsString();
         String arriveStation = dataTC14.get("Arrive at").getAsString();
         String seatType = dataTC14.get("Seat type").getAsString();

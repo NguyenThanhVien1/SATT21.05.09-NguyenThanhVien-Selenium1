@@ -1,14 +1,12 @@
 package TestCases;
 
-import Constant.Constant;
+import Common.Constant;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Testcase1 extends TestBase {
-
-
     @Test(description = "TC01 - User can log  into Railway with valid username and password")
     public void TC01() {
         System.out.println("TC01 - User can log  into Railway with valid username and password");

@@ -2,7 +2,7 @@ package TestCases;
 
 import Common.JsonHelper;
 import Common.Utilities;
-import Constant.Constant;
+import Common.Constant;
 import PageObjects.BookTicket;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
@@ -65,9 +65,8 @@ public class TestCase17 extends TestBase {
 
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider() {
-        String filePath = Utilities.getProjectPath() + "/src/main/java/TestCases/data.json";
-        JsonObject jsonpObject = JsonHelper.getJsonObject(filePath);
-        JsonObject dataTC17 = jsonpObject.getAsJsonObject("TC17");
+        JsonObject jsonObject = JsonHelper.getJsonObject(Utilities.jsonProjectPath());
+        JsonObject dataTC17 = jsonObject.getAsJsonObject("TC17");
         String departStation = dataTC17.get("Depart from").getAsString();
         String arriveStation = dataTC17.get("Arrive at").getAsString();
         String seatType = dataTC17.get("Seat type").getAsString();

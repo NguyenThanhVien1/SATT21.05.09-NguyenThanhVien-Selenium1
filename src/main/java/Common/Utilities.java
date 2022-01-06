@@ -1,9 +1,10 @@
 package Common;
 
 public class Utilities {
-
-
-    public static String getProjectPath() {
-        return System.getProperty("user.dir");
+    public static String getProjectPath(){
+        return ("src/main/java/Executables/chromedriver.exe");
+    }
+    public static String jsonProjectPath(){
+        return "src/main/java/TestCases/data.json";
     }
 }

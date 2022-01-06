@@ -1,6 +1,6 @@
 package TestCases;
 
-import Constant.Constant;
+import Common.Constant;
 import PageObjects.ConTactPage;
 import PageObjects.HomePage;
 import PageObjects.LogOutPage;
