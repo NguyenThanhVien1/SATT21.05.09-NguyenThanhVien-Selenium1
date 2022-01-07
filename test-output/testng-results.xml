@@ -1,33 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-06T22:00:13 ICT" name="Default Suite" finished-at="2022-01-06T22:00:32 ICT" duration-ms="18709">
+  <suite started-at="2022-01-07T13:21:41 ICT" name="Default Suite" finished-at="2022-01-07T13:22:00 ICT" duration-ms="18716">
     <groups>
     </groups>
-    <test started-at="2022-01-06T22:00:13 ICT" name="SATT21.05.09-NguyenThanhVien-Selenium1" finished-at="2022-01-06T22:00:32 ICT" duration-ms="18709">
-      <class name="TestCases.TestCase9">
-        <test-method is-config="true" signature="initTest()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:13 ICT" name="initTest" finished-at="2022-01-06T22:00:13 ICT" duration-ms="41" status="PASS">
+    <test started-at="2022-01-07T13:21:41 ICT" name="SATT21.05.09-NguyenThanhVien-Selenium1" finished-at="2022-01-07T13:22:00 ICT" duration-ms="18716">
+      <class name="TestCases.FTTC202">
+        <test-method is-config="true" signature="initTest()[pri:0, instance:TestCases.FTTC202@2a266d09]" started-at="2022-01-07T13:21:41 ICT" name="initTest" finished-at="2022-01-07T13:21:41 ICT" duration-ms="36" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initTest -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:13 ICT" name="beforeMethod" finished-at="2022-01-06T22:00:20 ICT" duration-ms="6585" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.FTTC202@2a266d09]" started-at="2022-01-07T13:21:42 ICT" name="beforeMethod" finished-at="2022-01-07T13:21:48 ICT" duration-ms="6416" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC09()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:20 ICT" name="TC09" description="TC09 - User can&#039;t change password when &#039;New Password&#039; and &#039;Confirm Password&#039; are different." finished-at="2022-01-06T22:00:31 ICT" duration-ms="11270" status="PASS">
+        <test-method signature="FTTC201(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCases.FTTC202@2a266d09]" started-at="2022-01-07T13:21:48 ICT" name="FTTC201" description="FTTC201 - User can book 1 ticket at a time" data-provider="data-provider" finished-at="2022-01-07T13:21:59 ICT" duration-ms="11116" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sài Gòn]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Đà Nẵng]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Soft bed]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Sài Gòn]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Phan Thiết]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Soft bed]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Sài Gòn]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Nha Trang]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Soft bed]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Sài Gòn]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Huế]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Soft bed]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Sài Gòn]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Quảng Ngãi]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Soft bed]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <input type="submit" value="Book ticket"> is not clickable at point (110, 547). Other element would receive the click: <div style="width: 100%; color: White; font-family: &quot;Helvetica Neue&quot;, &quot;Lucida Grande&quot;, &quot;Segoe UI&quot;, Arial, Helvetica, Verdana, sans-serif; font-size: 11pt;">...</div>
+  (Session info: chrome=97.0.4692.71)
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'DESKTOP-MI9U9J4', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d38ef29cce487ec2edac50a8a3262f80, clickElement {id=390354a6-0c27-441f-9e37-aea013ea1a58}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 96.0.4664.18 (b8887b3d1742a..., userDataDir: C:\Users\av\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:65141}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65141/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (d38ef29cce487ec2edac50a8a3262f80)] -> xpath: //input[@value='Book ticket']]
+Session ID: d38ef29cce487ec2edac50a8a3262f80]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="submit" value="Book ticket"> is not clickable at point (110, 547). Other element would receive the click: <div style="width: 100%; color: White; font-family: &quot;Helvetica Neue&quot;, &quot;Lucida Grande&quot;, &quot;Segoe UI&quot;, Arial, Helvetica, Verdana, sans-serif; font-size: 11pt;">...</div>
+  (Session info: chrome=97.0.4692.71)
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'DESKTOP-MI9U9J4', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d38ef29cce487ec2edac50a8a3262f80, clickElement {id=390354a6-0c27-441f-9e37-aea013ea1a58}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 96.0.4664.18 (b8887b3d1742a..., userDataDir: C:\Users\av\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:65141}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65141/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (d38ef29cce487ec2edac50a8a3262f80)] -> xpath: //input[@value='Book ticket']]
+Session ID: d38ef29cce487ec2edac50a8a3262f80
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at PageObjects.BookTicket.clickBtnBookTicket(BookTicket.java:104)
+at TestCases.FTTC202.FTTC201(FTTC202.java:44)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC09 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:31 ICT" name="afterMethod" finished-at="2022-01-06T22:00:32 ICT" duration-ms="653" status="PASS">
+        </test-method> <!-- FTTC201 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.FTTC202@2a266d09]" started-at="2022-01-07T13:21:59 ICT" name="afterMethod" finished-at="2022-01-07T13:22:00 ICT" duration-ms="642" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeTest()[pri:0, instance:TestCases.TestCase9@672872e1]" started-at="2022-01-06T22:00:32 ICT" name="closeTest" finished-at="2022-01-06T22:00:32 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeTest()[pri:0, instance:TestCases.FTTC202@2a266d09]" started-at="2022-01-07T13:22:00 ICT" name="closeTest" finished-at="2022-01-07T13:22:00 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeTest -->
-      </class> <!-- TestCases.TestCase9 -->
+      </class> <!-- TestCases.FTTC202 -->
     </test> <!-- SATT21.05.09-NguyenThanhVien-Selenium1 -->
   </suite> <!-- Default Suite -->
 </testng-results>

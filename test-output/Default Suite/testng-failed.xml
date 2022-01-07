@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="SATT21.05.09-NguyenThanhVien-Selenium1(failed)">
     <classes>
-      <class name="TestCases.TestCase9">
+      <class name="TestCases.FTTC202">
         <methods>
           <include name="beforeMethod"/>
+          <include name="FTTC201" invocation-numbers="0"/>
           <include name="afterMethod"/>
-          <include name="TC09"/>
           <include name="closeTest"/>
           <include name="initTest"/>
         </methods>
-      </class> <!-- TestCases.TestCase9 -->
+      </class> <!-- TestCases.FTTC202 -->
     </classes>
   </test> <!-- SATT21.05.09-NguyenThanhVien-Selenium1(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

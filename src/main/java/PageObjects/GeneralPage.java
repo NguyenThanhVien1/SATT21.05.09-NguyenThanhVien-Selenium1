@@ -4,6 +4,10 @@ import Common.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
+
 public class GeneralPage {
     //locators
     private final By tabLogin = By.xpath("//div[@id='menu']//a[@href='/Account/Login.cshtml']");
@@ -86,6 +90,8 @@ public class GeneralPage {
     public void gotoChangePassword() {
         this.getlbChangePassword().click();
     }
+
+
 
     public void gotoTimeTable() {
         this.getTimeTablebnt().click();

@@ -26,6 +26,44 @@
     "Arrive at": "Sài Gòn",
     "Seat type": "Hard seat",
     "Ticket amount": "10"
+  },
+
+  "FTC": {
+    "Depart from": "Phan Thiết",
+    "Arrive at": "Đà Nẵng",
+    "Seat type": "Soft bed",
+    "Ticket amount": "3"
+  },
+
+  "FTC2": {
+    "Depart from": "Sài Gòn",
+    "Arrive at": "Đà Nẵng",
+    "Seat type": "Soft bed",
+    "Ticket amount": "1",
+
+    "Depart from2": "Sài Gòn",
+    "Arrive at2": "Phan Thiết",
+    "Seat type2": "Soft bed",
+    "Ticket amount2": "1",
+
+    "Depart from3": "Sài Gòn",
+    "Arrive at3": "Nha Trang",
+    "Seat type3": "Soft bed",
+    "Ticket amount3": "1",
+
+    "Depart from4": "Sài Gòn",
+    "Arrive at4": "Huế",
+    "Seat type4": "Soft bed",
+    "Ticket amount4": "1",
+
+    "Depart from5": "Sài Gòn",
+    "Arrive at5": "Quảng Ngãi",
+    "Seat type5": "Soft bed",
+    "Ticket amount5": "1"
+
+  },
+  "FTC3":{
+    "error": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is 1/7/2022"
   }
 
 }
